@@ -1,0 +1,45 @@
+.holder {
+    border: 4px solid black;
+    width: 600px;
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holder :nth-child(1) {
+    background-color: #fd644d;
+    flex-basis: 50%;
+    order: 0;
+}
+
+.holder :nth-child(2) {
+    order: 3;
+    background-color: #4983b2;
+    flex-grow: 1;
+}
+
+.holder :nth-child(3) {
+    order: 2;
+    background-color: #663797;
+    flex-grow: 1;
+}
+
+.holder :nth-child(4) {
+    order: 4;
+    background-color: #0e7f12;
+    flex-grow: 1;
+}
+
+.holder :nth-child(5) {
+    flex-basis: 50%;
+    order: 1;
+    background-color: #fda429;
+}

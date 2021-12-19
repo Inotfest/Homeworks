@@ -1,0 +1,150 @@
+.header {
+    background-color: #d3b714;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    height: 100px;
+
+    @media (max-width: 768px) {
+        padding: 0px 15px;
+    }
+
+    .logo {
+        width: 162px;
+        height: 61px;
+    }
+
+    & #check-menu {
+        visibility: hidden;
+    }
+
+    & .checkbox {
+        position: absolute;
+    }
+
+    & .label-menu {
+        display: block;
+        width: 50px;
+        height: 20px;
+        position: relative;
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        & span,
+        &::before,
+        &::after {
+            width: 100%;
+            display: block;
+            height: 4px;
+            position: absolute;
+            background-color: rgb(65, 86, 155);
+            transition: all 0.3s;
+        }
+
+        &::after {
+            content: "";
+            top: 0px;
+        }
+
+        &::before {
+            content: "";
+            bottom: 0px;
+        }
+
+        @media (min-width: 768px) {
+            visibility: hidden;
+            position: fixed;
+        }
+    }
+
+    & #check-menu:checked ~ .label-menu {
+        & span,
+        &::before,
+        &::after {
+            width: 100%;
+            display: block;
+            height: 4px;
+            position: absolute;
+            background-color: black;
+        }
+
+        & span {
+            height: 0;
+            transition: 0s;
+        }
+
+        &::after {
+            content: "";
+            top: calc(50% - 2px);
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &::before {
+            content: "";
+            bottom: calc(50% - 2px);
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+
+    & .menu {
+        transition: all 1.5s;
+
+        @media (max-width: 767px) {
+            background-color: rgb(81, 160, 104);
+            width: 70%;
+            height: 100%;
+            position: fixed;
+            right: -100%;
+            top: 0;
+            visibility: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    & .menu-elements {
+        display: flex;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            padding-top: 40%;
+            align-items: center;
+            line-height: 2.5;
+            font-size: 24px;
+        }
+    }
+
+    & .menu-item {
+        padding-left: 15px;
+        color: inherit;
+        transition: all 5s;
+
+        &:hover {
+            color: white;
+        }
+
+        @media (max-width: 767px) {
+            display: flex;
+            border-bottom: 2px solid white;
+            width: 80%;
+            justify-content: center;
+            transition: all 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(39, 97, 82);
+            }
+        }
+    }
+
+    & #check-menu:checked ~ .menu {
+        right: 0;
+    }
+}

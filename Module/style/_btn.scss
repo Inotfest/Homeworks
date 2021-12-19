@@ -1,0 +1,19 @@
+.btn {
+    display: block;
+    width: 150px;
+    height: 55px;
+    background-color: $blue;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 0;
+
+    &:hover {
+        background-color: $grey_2;
+    }
+}
